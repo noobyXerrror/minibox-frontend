@@ -12,8 +12,8 @@ type Employee = {
 
 export default function HRDashboard() {
   const [showForm, setShowForm] = useState(false);
-  const [employees, setEmployees] = useState<Employee[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [_employees, setEmployees] = useState<Employee[]>([]);
+  const [_loading, setLoading] = useState(false);
 
   const fetchEmployees = async () => {
     setLoading(true);

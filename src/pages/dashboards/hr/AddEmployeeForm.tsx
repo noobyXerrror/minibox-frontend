@@ -38,7 +38,13 @@ export default function AddEmployeeForm({ onEmployeeAdded }: { onEmployeeAdded?:
   }, []);
 
   const handleFieldChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, type, checked } = e.target;
+  
+    const { name, value, type } = e.target;
+      let checked = false;
+  if (type === 'checkbox' && e.target instanceof HTMLInputElement) {
+    checked = e.target.checked;
+  }
+
     if (name === 'select_user') {
       setSelectValue(value);
       if (value === '__manual__') {
