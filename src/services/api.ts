@@ -16,13 +16,13 @@ API.interceptors.request.use((config) => {
 
 // HR Dashboard APIs
 export const fetchAllEmployees = async () => {
-  const response = await API.get("/employees/", { withCredentials: true });
+  const response = await API.get("/api/employees/", { withCredentials: true });
   
   return response.data;
 };
 
 export const getAvailableUsers = async () => {
-  const res = await API.get(`/auth/available-users/`, { withCredentials: true });
+  const res = await API.get(`/api/auth/available-users/`, { withCredentials: true });
   return res.data;
 };
 
@@ -34,7 +34,7 @@ export const addEmployee = async (employeeData: any) => {
     is_active: employeeData.is_active,
     monthly_salary: employeeData.monthly_salary,
   };
-  const res = await API.post(`/employees/`, payload, { withCredentials: true });
+  const res = await API.post(`/api/employees/`, payload, { withCredentials: true });
   return res.data;
 };
 export const generatePayroll = async () => {
