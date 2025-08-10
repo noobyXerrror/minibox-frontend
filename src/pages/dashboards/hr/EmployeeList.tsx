@@ -16,7 +16,7 @@ export default function EmployeeList() {
         console.error('Error fetching employees:', err);
         setEmployees([]);
       });
-  }, []);
+  }, [employees]);
 
   console.log("Employees state:", employees);
 

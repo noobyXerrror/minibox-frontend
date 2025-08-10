@@ -15,7 +15,7 @@ const Signup = () => {
     e.preventDefault();
     setError('');
     try {
-      await api.post('/signup/', form);
+      await api.post('/api/auth/signup/', form);
       navigate('/login');
     } catch {
       setError('Sign up failed. Try again.');
