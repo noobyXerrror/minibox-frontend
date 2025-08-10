@@ -14,11 +14,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-<<<<<<< HEAD
         const res = await axios.get('/api/auth/status/', { withCredentials: true });
-=======
-        const res = await axios.get('/api/auth/status/');
->>>>>>> 4eb95faefabe7de7d68d43c3cae304b82742789e
         if (res.status === 200) {
           setIsAuthenticated(true);
         } else {
