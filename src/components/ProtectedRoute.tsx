@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import type { ReactNode } from 'react';
-import axios from '../services/api'; // your configured axios instance with withCredentials
+import API from '../services/api'; // your configured axios instance with withCredentials
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -14,7 +14,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get('/api/auth/status/', { withCredentials: true });
+        const res = await API.get('/api/auth/status/', { withCredentials: true });
         if (res.status === 200) {
           setIsAuthenticated(true);
         } else {
